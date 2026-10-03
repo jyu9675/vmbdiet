@@ -47,7 +47,8 @@ def logistic_assoc(df: pd.DataFrame, outcome: str, predictor: str,
             pterm = "_z"
     terms = [pterm]
     for c in covariates:
-        terms.append(f"C({c})" if _is_categorical(d[c]) else c)
+        # wrap in Q() so covariate names with spaces/dots (e.g. "Energy kcal") are valid in the formula
+        terms.append(f"C(Q('{c}'))" if _is_categorical(d[c]) else f"Q('{c}')")
     formula = f"Q('{outcome}') ~ " + " + ".join(terms)
     res = smf.logit(formula, data=d).fit(disp=0)
     name = pterm if pterm in res.params.index else predictor

@@ -2,7 +2,7 @@
 
 **Diet ↔ vaginal microbiome association toolkit.** Does what a person eats track with their vaginal community — bacterial vaginosis (BV), community state type (CST), *Lactobacillus* dominance? This packages the statistical methods shared across the diet–vaginal-microbiome literature into one tested, reusable tool, so the association can be run on any cohort that pairs a 16S table with dietary data.
 
-> Status **v0.1** — engine, CLI, and synthetic validation complete (recovers injected diet→microbiome signals). Real public-dataset validation in progress; see [docs/DATASETS.md](docs/DATASETS.md).
+> Status **v0.1** — engine, CLI, and synthetic validation complete (recovers injected diet→microbiome signals). **Real-data validation done:** on the Italian "StressDiet" cohort (PRJNA1188525, N=113), reprocessed from raw 16S reads, vmbdiet independently **replicates both published diet signals** — animal-protein fraction → CST-IV (energy-adjusted OR 1.66, p=0.019) and alcohol → *Gardnerella*/*Leptotrichia* (rho +0.30/+0.36). See [example/italy_stressdiet/](example/italy_stressdiet/) and the [findings write-up](docs/italy-stressdiet-findings.md). Other verified cohorts in [docs/DATASETS.md](docs/DATASETS.md).
 
 ## Why
 

@@ -1,0 +1,125 @@
+{
+  "N": 113,
+  "replication": {
+    "animal_protein_density_to_cstIV": {
+      "odds_ratio": 1.6566061365162676,
+      "ci_low": 1.0850327134209388,
+      "ci_high": 2.529272949652243,
+      "p_value": 0.01938934722500024,
+      "q_value": 0.13572543057500167
+    },
+    "alcohol_to_Gardnerella": {
+      "taxon": "Gardnerella",
+      "r": 0.29673030587093613,
+      "p_value": 0.0014157854661627296,
+      "q_value": 0.0675693775886742
+    }
+  },
+  "cst_distribution": {
+    "I": 49,
+    "IV": 35,
+    "III": 22,
+    "V": 4,
+    "II": 3
+  },
+  "cst_IV": 35,
+  "lacto_depleted": 25,
+  "n_taxa": 163,
+  "n_asvs": 1312,
+  "permanova_cstIV": {
+    "pseudo_F": 21.966409583632572,
+    "p_value": 0.001,
+    "n": 113,
+    "groups": {
+      "0": 78,
+      "1": 35
+    },
+    "permutations": 999
+  },
+  "top_cstIV": [
+    {
+      "outcome": "cst_IV",
+      "predictor": "animal proteins",
+      "n": 113,
+      "odds_ratio": 1.4795957252026397,
+      "ci_low": 0.8475479504304904,
+      "ci_high": 2.582984843425054,
+      "p_value": 0.16816818660445876,
+      "per": "SD",
+      "covariates": [
+        "Energy kcal"
+      ],
+      "q_value": 0.7447427141524544
+    },
+    {
+      "outcome": "cst_IV",
+      "predictor": "carbo",
+      "n": 113,
+      "odds_ratio": 1.7843861330402213,
+      "ci_low": 0.7537565477679922,
+      "ci_high": 4.224220514189532,
+      "p_value": 0.18782821558245177,
+      "per": "SD",
+      "covariates": [
+        "Energy kcal"
+      ],
+      "q_value": 0.7447427141524544
+    },
+    {
+      "outcome": "cst_IV",
+      "predictor": "veg. Proteins",
+      "n": 113,
+      "odds_ratio": 0.612101882748542,
+      "ci_low": 0.26930453043626845,
+      "ci_high": 1.3912454954149986,
+      "p_value": 0.24130289360228507,
+      "per": "SD",
+      "covariates": [
+        "Energy kcal"
+      ],
+      "q_value": 0.7447427141524544
+    },
+    {
+      "outcome": "cst_IV",
+      "predictor": "monoins. FA",
+      "n": 113,
+      "odds_ratio": 0.609093239346028,
+      "ci_low": 0.2509933255026442,
+      "ci_high": 1.4781053379570022,
+      "p_value": 0.2730465438174936,
+      "per": "SD",
+      "covariates": [
+        "Energy kcal"
+      ],
+      "q_value": 0.7447427141524544
+    },
+    {
+      "outcome": "cst_IV",
+      "predictor": "other PUFA",
+      "n": 113,
+      "odds_ratio": 0.6889945068800134,
+      "ci_low": 0.3431039303624088,
+      "ci_high": 1.3835849388533945,
+      "p_value": 0.29499283656540354,
+      "per": "SD",
+      "covariates": [
+        "Energy kcal"
+      ],
+      "q_value": 0.7447427141524544
+    },
+    {
+      "outcome": "cst_IV",
+      "predictor": "starch",
+      "n": 113,
+      "odds_ratio": 0.6832447445186839,
+      "ci_low": 0.3105584158686885,
+      "ci_high": 1.5031741439259072,
+      "p_value": 0.34372740653190204,
+      "per": "SD",
+      "covariates": [
+        "Energy kcal"
+      ],
+      "q_value": 0.7447427141524544
+    }
+  ]
+}
