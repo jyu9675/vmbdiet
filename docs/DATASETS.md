@@ -8,18 +8,19 @@ intake. Most vaginal-microbiome cohorts have no diet layer. These are the verifi
 
 | # | Cohort | Microbiome | Diet | N | Accession | Status |
 |---|--------|-----------|------|---|-----------|--------|
-| 1 | **Italian / Bologna** (Djusse/Zhu/Foschi 2025, *Front Cell Infect Microbiol*) | 16S amplicon | nutrient FFQ (supplement XLS) | 113 | **PRJNA1188525** (SRA) | ✅ verified live |
-| 2 | **MELODY / IBD** (PLOS ONE 2024) | 16S V3–V4 | **HEI-2015** (3× 24-h recall, NDSR) | 48 | **PRJNA915128** (BioProject) | public per data-availability stmt |
-| 3 | **MicrobeMom** (Microbiol Spectr 2024) | shotgun metagenomic | FFQ nutrient + amino acids | 118 | **PRJEB48251** (ENA) | ✅ verified live |
+| 1 | **Italian / Bologna** (Foschi et al. 2025, *Front Cell Infect Microbiol*) | 16S amplicon | nutrient FFQ (supplement XLS) | 113 | **PRJNA1188525** (SRA) | ✅ **DONE** — [example/italy_stressdiet](../example/italy_stressdiet) |
+| 2 | **MELODY / IBD pregnancy** (PLOS ONE 2024) | vaginal 16S V3–V4 | **HEI-2015** (3× 24-h recall) | 48 | **PRJNA915128** (BioProject) | ✅ **DONE** — [example/melody_ibd](../example/melody_ibd) |
+| 3 | ~~**MicrobeMom** (Microbiol Spectr 2024)~~ | ~~shotgun~~ | FFQ | 118 | **PRJEB48251** (ENA) | ❌ **not usable — GUT/stool cohort, no vaginal samples** |
 
-**Recommended first target: #1 (PRJNA1188525).** Preferred data type (16S), largest fully-open paired N,
-non-pregnant reproductive-age (cleanest CST/Lactobacillus-dominance baseline), diet in the open Frontiers
-supplement (`DataSheet1.xls` / `DataSheet2.xls`). **One thing to confirm first:** that the supplement
-carries a subject-ID ↔ SRA-sample key to join diet to microbiome; if absent, email the corresponding author.
-Article + supplements: https://www.frontiersin.org/articles/10.3389/fcimb.2025.1582283/full
-
-- #2 is the direct **HEI-2015 → CST** cross-check (same metric as the Hawaii study), smaller + IBD confounding.
-- #3 is a larger **replication** but shotgun (needs read→taxa processing to get CSTs) and a pregnancy cohort.
+**Both runnable cohorts have now been analyzed** (see [italy-stressdiet-findings.md](italy-stressdiet-findings.md)).
+Key practical lessons:
+- **#1 (Italian)** — diet is in the open Frontiers supplement; `sample_alias = StressDiet_N` joins 1:1 to the
+  supplement `sample` column. **Both published signals replicated** (animal protein → CST-IV; alcohol → *Gardnerella*).
+- **#2 (MELODY)** — the diet (HEI-2015 + full nutrient panel) and covariates turned out to be embedded in the
+  **BioSample metadata** (no supplement needed); `sample_alias = <subject>_BSL1`. Pull with `ena/browser/api/xml/<SAMN>`.
+  Result: a **concordant-direction null** (underpowered pregnancy cohort; alcohol ≈ 0 so that axis is untestable).
+- **#3 (MicrobeMom, PRJEB48251)** — verified at the ENA record to be **`human gut metagenome`** (1,451 runs, ~1.5 TB),
+  a maternal-gut probiotic RCT with **no vaginal samples**. The earlier "vaginal replication" label was wrong; dropped.
 
 ## CST classification reference (VALENCIA)
 

@@ -93,6 +93,29 @@ is reassuring that the association that survives adjustment is the one the origi
 - PERMANOVA (community ~ CST-IV, pseudo-F ≈ 22, p = 0.001) is strong but partly definitional, since
   CST-IV is itself a community label; it is reported as a structural sanity check, not a diet result.
 
+## Second cohort: MELODY (pregnancy ± IBD, HEI-2015)
+
+To test whether the toolkit behaves honestly on a *different* cohort with a *different* diet metric, we ran
+the same pipeline on **MELODY** (PRJNA915128; PLOS ONE 2024): 48 pregnant individuals (23 IBD, 25 control),
+vaginal V3–V4 16S, diet measured as **HEI-2015** (the Healthy Eating Index — the Hawaii study's metric).
+Usefully, the per-sample diet and covariates are carried in the BioSample metadata, so the cohort is fully
+reproducible without any supplement. Details and scripts: [`example/melody_ibd/`](../example/melody_ibd/).
+
+| | Italian (StressDiet) | MELODY (pregnancy/IBD) |
+|---|---|---|
+| N / CST-IV events | 113 / 35 | 47 / 12 |
+| population | non-pregnant, reproductive age | 3rd-trimester pregnant, ±IBD |
+| animal-protein density → CST-IV | **OR 1.66, p=0.019** | OR 1.30, p=0.44 (same direction) |
+| HEI-2015 → CST-IV | — (not measured) | OR 1.40, p=0.33 |
+| alcohol → *Gardnerella* | **ρ +0.30, p=0.001** | untestable (alcohol ≈ 0 in pregnancy) |
+
+MELODY is a **null** — nothing reaches significance and nothing survives FDR. That is the right answer and a
+good sign, for three reasons: (1) it is badly underpowered (47 women, 12 events); (2) pregnancy both flattens
+the alcohol exposure to zero and pushes the community toward *Lactobacillus* regardless of diet; and (3) the
+original authors themselves found no significant diet- or IBD-related difference in vaginal microbiota. The one
+directly comparable signal — animal protein — points the **same way** in both cohorts. A tool that returned
+"significant" here would be the worrying result, not this.
+
 ## Why this matters for the program
 
 This closes the loop on the toolkit: `vmbdiet` was built from four papers' worth of methods, and here
