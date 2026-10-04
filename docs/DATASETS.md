@@ -9,18 +9,16 @@ intake. Most vaginal-microbiome cohorts have no diet layer. These are the verifi
 | # | Cohort | Microbiome | Diet | N | Accession | Status |
 |---|--------|-----------|------|---|-----------|--------|
 | 1 | **Italian / Bologna** (Foschi et al. 2025, *Front Cell Infect Microbiol*) | 16S amplicon | nutrient FFQ (supplement XLS) | 113 | **PRJNA1188525** (SRA) | ✅ **DONE** — [example/italy_stressdiet](../example/italy_stressdiet) |
-| 2 | **MELODY / IBD pregnancy** (PLOS ONE 2024) | vaginal 16S V3–V4 | **HEI-2015** (3× 24-h recall) | 48 | **PRJNA915128** (BioProject) | ✅ **DONE** — [example/melody_ibd](../example/melody_ibd) |
-| 3 | ~~**MicrobeMom** (Microbiol Spectr 2024)~~ | ~~shotgun~~ | FFQ | 118 | **PRJEB48251** (ENA) | ❌ **not usable — GUT/stool cohort, no vaginal samples** |
+| 2 | **MELODY / IBD pregnancy** (PLOS ONE 2024) | vaginal 16S V3–V4 | **HEI-2015** (BioSample metadata) | 48 | **PRJNA915128** (BioProject) | ✅ **DONE** — [example/melody_ibd](../example/melody_ibd) |
+| 3 | **IATA artificial-insemination** (Food & Function 2026, DOI 10.1039/d5fo04208a) | vaginal 16S amplicon | **MEDI-LITE** (Mediterranean) | 106 | **PRJNA1234600** (SRA) | 🟡 reads **staged**; diet table behind RSC paywall |
+| 4 | **MicrobeMom** (ASM Spectrum 2024, PMC11537119) | **283 vaginal** 16S (+ stool/oral/milk) | 3-day diary → macro/micro + amino acids | ~118 | **PRJEB48251** (ENA) | 🟡 vaginal reads public; diet **on request** |
 
-**Both runnable cohorts have now been analyzed** (see [italy-stressdiet-findings.md](italy-stressdiet-findings.md)).
+**Cohorts #1 and #2 analyzed** (see [italy-stressdiet-findings.md](italy-stressdiet-findings.md)); #3 is the top open lead; #4 corrects an earlier error.
 Key practical lessons:
-- **#1 (Italian)** — diet is in the open Frontiers supplement; `sample_alias = StressDiet_N` joins 1:1 to the
-  supplement `sample` column. **Both published signals replicated** (animal protein → CST-IV; alcohol → *Gardnerella*).
-- **#2 (MELODY)** — the diet (HEI-2015 + full nutrient panel) and covariates turned out to be embedded in the
-  **BioSample metadata** (no supplement needed); `sample_alias = <subject>_BSL1`. Pull with `ena/browser/api/xml/<SAMN>`.
-  Result: a **concordant-direction null** (underpowered pregnancy cohort; alcohol ≈ 0 so that axis is untestable).
-- **#3 (MicrobeMom, PRJEB48251)** — verified at the ENA record to be **`human gut metagenome`** (1,451 runs, ~1.5 TB),
-  a maternal-gut probiotic RCT with **no vaginal samples**. The earlier "vaginal replication" label was wrong; dropped.
+- **#1 (Italian)** — diet in the open Frontiers supplement; `sample_alias = StressDiet_N` joins 1:1. **Both published signals replicated** (animal protein → CST-IV; alcohol → *Gardnerella*).
+- **#2 (MELODY)** — diet (HEI-2015 + full nutrient panel) + covariates embedded in the **BioSample metadata** (`ena/browser/api/xml/<SAMN>`); `sample_alias = <subject>_BSL1`. Result: a **concordant-direction null**.
+- **#3 (IATA, PRJNA1234600)** — 106 vaginal 16S samples public & verified; study is explicitly Mediterranean-diet (MEDI-LITE) × vaginal microbiota × AI pregnancy success. Reads downloaded/staged in this repo's workflow. **Blocker:** the per-swab MEDI-LITE table lives only in the RSC Electronic Supplementary Information (`d5fo04208a`); the article is not open-access and RSC returns 403 to automated fetches. **To finish:** obtain the ESI (institutional access or author request), map it to `sample_alias`/`source_material_id` ("swab N"), then run `vmbdiet associate`.
+- **#4 (MicrobeMom, PRJEB48251)** — **correction of an earlier note.** PRJEB48251 is a mixed-body-site cohort that **does contain 283 `Vaginal_microbiome` samples** (aliases `PV###_{E/L/1M}`; the earlier "no vaginal samples / gut-only" note was wrong — it mis-read `scientific_name` and missed `environment_material`). The real blocker is the diet join: the 3-day-diary nutrients are **not** in a per-subject supplement table and the data-availability statement routes them to the corresponding author. Runnable if the author supplies a PV-ID-keyed nutrient table.
 
 ## CST classification reference (VALENCIA)
 
@@ -30,12 +28,24 @@ France et al. 2020, *Microbiome* — the field-standard nearest-centroid CST cla
 - Classifier: `https://raw.githubusercontent.com/ravel-lab/VALENCIA/master/Valencia.py` · repo `ravel-lab/VALENCIA` (MIT).
 - `vmbdiet.cst.assign_cst_valencia(abund, centroids)` scores against these centroids directly (Yue-Clayton), matching VALENCIA.
 
-## Not currently usable
+## Controlled-access / request-only (strong vaginal+diet cohorts behind a gate)
 
-- **Hawaii multi-ethnic** (PMC11479099, HEI-2015 + 16S, N=40): data "available upon publication" but **no accession deposited yet** — revisit.
-- **PIN prenatal** (PMC8881389, N≈634): no public accession (likely controlled).
-- **Birmingham BV/nutrients** (PMC2663425, N=1521): **no sequencing at all** (Nugent score only) — useful only as a reference for which nutrients associate with BV.
-- **MOMS-PI** (dbGaP phs001523): vaginal 16S but **no diet layer**.
+These have real vaginal microbiome **and** diet data but require a data application or author request; not runnable now, listed so the access path is on record (verified 2026-10).
+
+- **Human Phenotype Project / Weizmann 10K** — the richest diet×vaginal pairing that exists: gut + **vaginal** + oral microbiome with app-based diet logs, FFQ, and CGM (~10k with diet + shotgun; Nat Med 2026). ENA projects **PRJEB85771 / PRJEB85945** verify but return **zero public runs** (managed access). Both reads and diet are gated. Apply: humanphenotypeproject.org/data-access (info@pheno.ai), bona-fide-researcher DAA.
+- **Emory African-American Microbiome in Pregnancy** (Dunlop/Corwin/Brennan). Vaginal 16S reads **public**: **PRJNA725416** (436 `human vaginal metagenome`); **PRJNA553594** is the *oral* arm, not vaginal. Phenotypes (whether diet is included is **unverified** — protocol emphasizes psychosocial measures) are in a **dbGaP** controlled study (exact `phs` not resolved; it is **not** phs001523, which is MOMS-PI/VCU). Apply via dbGaP.
+- **PIN vaginal / "Race & the Vaginal Microbiome & sPTB"** (mSystems 2022, PMC9238383). **PRJNA694098 — 824 vaginal 16S, public reads.** Nested in the Pregnancy-Infection-and-Nutrition (PIN) cohort, which holds FFQ/nutrition, but diet is **not** in the public BioSample — request from PIN investigators (UNC CPC).
+- **Isala** (Belgium citizen-science; Nat Microbiol 2023). Reads public: ENA **PRJEB50407** (3,345 vaginal 16S). Per-subject metadata **including the diet FFQ is EGA-controlled: EGAD00001009890** (DAA + DAC, ~2–3 mo).
+- **HCL / Tuddenham–Brotman** (PMC7387193 2020; PMC6806504 2019) — vaginal 16S V3–V4, Block Brief 2000 FFQ (macronutrient-fiber, betaine), n≈104–121, but data-availability says reads "**will be** released" (no accession found) — email authors / re-check SRA.
+
+## Not usable (fail a hard requirement)
+
+- **Hawaii multi-ethnic** (PMC11479099, HEI-2015 + full-length V2–V9 16S, N=40): **no accession deposited yet** ("following acceptance") — revisit for a PRJNA/GEO ID; pipeline needs full-length (no pair-merge) handling.
+- **Birmingham BV/nutrients** (PMC2663425, N=1521): **no sequencing** (Nugent score only) — reference for which nutrients associate with BV, not a reanalysis target.
+- **MOMS-PI** (dbGaP phs001523, VCU): large vaginal 16S but **no diet layer**.
+- **mSphere daily-fluctuations** (PRJNA637322, 1,101 vaginal 16S, public): diet is only vegetarian/non-veg binary and "on request" — too coarse.
+- **IMPACT BCN MedDiet RCT** (AJCN 2025, PMC12674037): excellent diet (preg-MEDAS + 151-item FFQ) + vaginal 16S N≈351, but **no accession issued yet** (placeholder in data-availability) + diet behind a DAA — re-check for the BioProject.
+- Chinese cohort (PMC11836416, 6,755, 16S) — no dietary intake. Iranian BV-diet papers / NHANES BV-diet — FFQ+BV but **no sequencing**.
 
 ## Run plan (real data)
 
