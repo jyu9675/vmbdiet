@@ -2,8 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](pyproject.toml)
-<!-- After minting the Zenodo DOI, add it here and in CITATION.cff:
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23148535.svg)](https://doi.org/10.5281/zenodo.23148535)
 
 **Diet ↔ vaginal microbiome association toolkit.** Does what a person eats track with their vaginal community — bacterial vaginosis (BV), community state type (CST), *Lactobacillus* dominance? This packages the statistical methods shared across the diet–vaginal-microbiome literature into one tested, reusable tool, so the association can be run on any cohort that pairs a 16S table with dietary data.
 

@@ -27,10 +27,9 @@ keywords:
 version: 0.1.0
 license: MIT
 repository-code: "https://github.com/jyu9675/vmbdiet"
-# After the first Zenodo release is minted, fill in the DOI below (and the README badge):
-# doi: 10.5281/zenodo.XXXXXXXX
-# date-released: YYYY-MM-DD
-# identifiers:
-#   - type: doi
-#     value: 10.5281/zenodo.XXXXXXXX
-#     description: "Archived release on Zenodo"
+doi: 10.5281/zenodo.23148535
+date-released: 2026-10-04
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23148535
+    description: "Archived release on Zenodo (concept DOI, resolves to latest version)"
