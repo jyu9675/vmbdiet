@@ -2,13 +2,16 @@
 # 16S V3-V4 processing: PRJNA1188525 (StressDiet, Italy) -> per-sample ASV/genus table
 # cutadapt (primer trim) -> truncate -> vsearch merge -> EE filter -> UNOISE3 ASVs -> chimera -> otutab -> SINTAX
 set -euo pipefail
-BASE="/c/Users/dotne/AppData/Local/Temp/claude/C--Users-dotne/f6d0e8d6-d4bf-47ac-9c34-9bbe1ab7c80c/scratchpad/vmbdiet_italy"
+# Portable: run from anywhere; BASE is this example dir. Provide vsearch + the RDP ref via env vars:
+#   VSEARCH   path to the vsearch executable (default: `vsearch` on PATH)
+#   RDP_REF   path to the SINTAX RDP reference (default: ref/rdp_16s_v16.fa.gz under BASE)
+BASE="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$BASE"
-VS="$BASE/tools/vsearch-2.32.0-win-x86_64/bin/vsearch.exe"
-REF="$BASE/ref/rdp_16s_v16.fa.gz"
+VS="${VSEARCH:-vsearch}"
+REF="${RDP_REF:-$BASE/ref/rdp_16s_v16.fa.gz}"
 FWD="CCTACGGGNGGCWGCAG"; REV="GACTACHVGGGTATCTAATCC"
 mkdir -p work/filt work/tmp logs
-MAN="$BASE/ena_manifest.tsv"
+MAN="$BASE/data/ena_manifest.tsv"
 
 echo "[$(date +%T)] per-sample trim/merge/filter"
 # manifest cols: run_accession sample_alias read_count fastq_bytes fastq_ftp sample_num

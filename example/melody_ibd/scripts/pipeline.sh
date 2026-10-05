@@ -3,15 +3,18 @@
 # Primers already removed in the deposited reads, so NO cutadapt step (unlike the Italian cohort):
 # truncate -> vsearch merge -> EE filter -> UNOISE3 ASVs -> chimera -> otutab -> SINTAX(+species).
 set -euo pipefail
-BASE="/c/Users/dotne/AppData/Local/Temp/claude/C--Users-dotne/f6d0e8d6-d4bf-47ac-9c34-9bbe1ab7c80c/scratchpad/cohorts/melody"
-TOOLS="/c/Users/dotne/AppData/Local/Temp/claude/C--Users-dotne/f6d0e8d6-d4bf-47ac-9c34-9bbe1ab7c80c/scratchpad/vmbdiet_italy"
+# Portable: BASE is this example dir. Provide tools via env vars:
+#   VSEARCH  path to vsearch executable (default: `vsearch` on PATH)
+#   RDP_REF  path to the SINTAX RDP reference (default: ref/rdp_16s_v16.fa.gz under BASE)
+BASE="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$BASE"
-VS="$TOOLS/tools/vsearch-2.32.0-win-x86_64/bin/vsearch.exe"
-REF="$TOOLS/ref/rdp_16s_v16.fa.gz"
+VS="${VSEARCH:-vsearch}"
+REF="${RDP_REF:-$BASE/ref/rdp_16s_v16.fa.gz}"
 mkdir -p work/filt work/tmp logs
 
 echo "[$(date +%T)] per-sample truncate/merge/filter (no primer trim)"
-tail -n +2 run_alias.tsv | while IFS=$'\t' read -r srr alias; do
+MAP="$BASE/data/run_alias.tsv"; [ -f "$MAP" ] || MAP="$BASE/run_alias.tsv"
+tail -n +2 "$MAP" | while IFS=$'\t' read -r srr alias; do
   r1="reads/${srr}_1.fastq.gz"; r2="reads/${srr}_2.fastq.gz"; out="work/filt/${alias}.fa"
   [ -s "$out" ] && { echo "  skip $alias"; continue; }
   [ -s "$r1" ] && [ -s "$r2" ] || { echo "  MISSING $srr ($alias)"; continue; }

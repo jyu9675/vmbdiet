@@ -7,9 +7,11 @@ import numpy as np, pandas as pd
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.join(BASE, "work")
-TOOLS = r"C:/Users/dotne/AppData/Local/Temp/claude/C--Users-dotne/f6d0e8d6-d4bf-47ac-9c34-9bbe1ab7c80c/scratchpad/vmbdiet_italy"
-VS = os.path.join(TOOLS, "tools", "vsearch-2.32.0-win-x86_64", "bin", "vsearch.exe")
-SPP_DB = os.path.join(TOOLS, "ref", "species_db.fa")
+# Portable: vsearch from PATH (or $VSEARCH); curated species DB shipped in the Italian example
+# (or $VMB_SPECIES_DB).
+VS = os.environ.get("VSEARCH", "vsearch")
+SPP_DB = os.environ.get("VMB_SPECIES_DB",
+                        os.path.join(BASE, "..", "..", "italy_stressdiet", "data", "vaginal_species_db.fa"))
 OUT = os.path.join(BASE, "results"); os.makedirs(OUT, exist_ok=True)
 
 def read_fasta(fp):
