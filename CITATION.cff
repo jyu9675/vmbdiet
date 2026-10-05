@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this toolkit, please cite it as below."
+title: "vmbdiet: a diet - vaginal microbiome association toolkit"
+abstract: >-
+  A tested, reusable toolkit that standardizes diet - vaginal-microbiome
+  association analysis: vaginal community state type (CST) classification
+  (dominant-taxon and VALENCIA nearest-centroid / Yue-Clayton) and
+  covariate-adjusted association of dietary intake with CST, bacterial
+  vaginosis, and Lactobacillus dominance (per-SD adjusted logistic regression
+  with Benjamini-Hochberg FDR, Spearman nutrient-taxon correlation,
+  Mann-Whitney, and PERMANOVA). Validated end-to-end on two independent public
+  cohorts reprocessed from raw 16S reads (PRJNA1188525; PRJNA915128).
+type: software
+authors:
+  - given-names: Jean
+    family-names: Yu
+    email: jyu9675@gmail.com
+keywords:
+  - vaginal microbiome
+  - diet
+  - nutrition
+  - bacterial vaginosis
+  - community state type
+  - VALENCIA
+  - Lactobacillus
+  - 16S rRNA
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/jyu9675/vmbdiet"
+# After the first Zenodo release is minted, fill in the DOI below (and the README badge):
+# doi: 10.5281/zenodo.XXXXXXXX
+# date-released: YYYY-MM-DD
+# identifiers:
+#   - type: doi
+#     value: 10.5281/zenodo.XXXXXXXX
+#     description: "Archived release on Zenodo"
