@@ -1,0 +1,74 @@
+{
+  "n": 200,
+  "outcome": "cst_IV",
+  "covariates": [
+    "age",
+    "race",
+    "bmi"
+  ],
+  "cst_distribution": {
+    "IV": 96,
+    "I": 67,
+    "III": 37
+  },
+  "permanova_outcome": {
+    "pseudo_F": 320.2433923160739,
+    "p_value": 0.001,
+    "n": 200,
+    "groups": {
+      "0": 104,
+      "1": 96
+    },
+    "permutations": 999
+  },
+  "top_hits": [
+    {
+      "outcome": "cst_IV",
+      "predictor": "carbohydrate_g",
+      "n": 200,
+      "odds_ratio": 0.1444232162147577,
+      "ci_low": 0.08201765121432777,
+      "ci_high": 0.25431190814412064,
+      "p_value": 2.0443894863856368e-11,
+      "per": "SD",
+      "covariates": [
+        "age",
+        "race",
+        "bmi"
+      ],
+      "q_value": 6.13316845915691e-11
+    },
+    {
+      "outcome": "cst_IV",
+      "predictor": "fat_g",
+      "n": 200,
+      "odds_ratio": 2.17082032989083,
+      "ci_low": 1.5395711968998955,
+      "ci_high": 3.060891834139543,
+      "p_value": 9.809011452218565e-06,
+      "per": "SD",
+      "covariates": [
+        "age",
+        "race",
+        "bmi"
+      ],
+      "q_value": 1.4713517178327848e-05
+    },
+    {
+      "outcome": "cst_IV",
+      "predictor": "folate_ug",
+      "n": 200,
+      "odds_ratio": 0.5395608768680766,
+      "ci_low": 0.39043503251301326,
+      "ci_high": 0.745645025685405,
+      "p_value": 0.00018531577517858552,
+      "per": "SD",
+      "covariates": [
+        "age",
+        "race",
+        "bmi"
+      ],
+      "q_value": 0.00018531577517858552
+    }
+  ]
+}

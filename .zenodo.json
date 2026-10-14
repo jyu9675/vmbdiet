@@ -1,0 +1,23 @@
+{
+  "title": "vmbdiet: a diet – vaginal microbiome association toolkit",
+  "description": "A tested, reusable toolkit that standardizes diet – vaginal-microbiome association analysis: vaginal community state type (CST) classification (dominant-taxon rule and VALENCIA nearest-centroid / Yue-Clayton scoring) and covariate-adjusted association of dietary intake with CST, bacterial vaginosis, and Lactobacillus dominance (per-SD adjusted logistic regression with Benjamini-Hochberg FDR, Spearman nutrient-taxon correlation, Mann-Whitney, and PERMANOVA). Validated end-to-end on two independent public cohorts reprocessed from raw 16S reads: the Italian 'StressDiet' cohort (PRJNA1188525, N=113), where it independently replicates both published signals (animal-protein fraction to CST-IV, OR 1.66 per SD, p=0.019; alcohol to Gardnerella, rho +0.30), and the MELODY pregnancy/IBD cohort (PRJNA915128, N=47, HEI-2015), a concordant-direction null consistent with the source study.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "vaginal microbiome",
+    "diet",
+    "nutrition",
+    "bacterial vaginosis",
+    "community state type",
+    "CST",
+    "VALENCIA",
+    "Lactobacillus",
+    "16S rRNA",
+    "HEI-2015",
+    "Mediterranean diet"
+  ],
+  "creators": [
+    { "name": "Yu, Jean" }
+  ]
+}
