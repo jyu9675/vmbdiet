@@ -1,0 +1,35 @@
+{
+  "exposure": "fiber",
+  "mediator": "gut_scfa",
+  "outcome": "cst_IV",
+  "outcome_type": "binary",
+  "scale": "risk difference (probability)",
+  "contrast": "+1.0 SD of fiber",
+  "n": 300,
+  "n_boot_ok": 400,
+  "clustered_by": null,
+  "total_effect": -0.25855083202696505,
+  "total_ci": [
+    -0.3105344794236583,
+    -0.21466345337652037
+  ],
+  "direct_effect_nde": -0.10621677314072413,
+  "nde_ci": [
+    -0.19083838146717952,
+    -0.01945135194312716
+  ],
+  "indirect_effect_nie": -0.15233405888624094,
+  "nie_ci": [
+    -0.21960089128480514,
+    -0.0881485729149031
+  ],
+  "proportion_mediated": 0.5891841758619967,
+  "prop_ci": [
+    0.33715669505637325,
+    0.9083493354925599
+  ],
+  "path_a_x_to_m": 0.38854951531281046,
+  "path_b_m_to_y": -3.084474803431203,
+  "path_cprime_direct": -0.5919654749345331,
+  "assumptions": "Estimand only; valid under temporal order X->M->Y and no unmeasured X-Y/X-M/M-Y confounding. Report as 'consistent with mediation', not causation."
+}
