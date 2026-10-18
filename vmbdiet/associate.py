@@ -150,3 +150,41 @@ def _bh(p: np.ndarray) -> np.ndarray:
         prev = min(prev, p[i] * n / k)
         q[i] = prev
     return q
+
+
+def or_to_logor(odds_ratio: float, ci_low: float, ci_high: float):
+    """Convert a reported OR + 95% CI to (log-OR, SE) for meta-analysis."""
+    return float(np.log(odds_ratio)), float((np.log(ci_high) - np.log(ci_low)) / (2 * 1.959964))
+
+
+def meta_analyze(estimates, method: str = "fixed") -> dict:
+    """Inverse-variance meta-analysis of per-study effects on the log scale (e.g. log-ORs).
+
+    estimates: list of (beta, se). method: 'fixed' or 'DL' (DerSimonian-Laird random effects).
+    Returns the pooled beta + SE + 95% CI (log scale), z, p, and heterogeneity Q / I^2 / tau^2 / k.
+    Exponentiate `beta` and `ci` for an odds ratio. The field's standard tool for combining the same
+    association measured in several cohorts (here: diet -> vaginal CST across public cohorts).
+    """
+    b = np.array([e[0] for e in estimates], float)
+    se = np.array([e[1] for e in estimates], float)
+    if len(b) < 2:
+        raise ValueError("need >=2 studies to meta-analyze")
+    w = 1.0 / se ** 2
+    b_fixed = float((w * b).sum() / w.sum())
+    k = len(b); df = k - 1
+    Q = float((w * (b - b_fixed) ** 2).sum())
+    I2 = max(0.0, (Q - df) / Q) * 100 if Q > 0 else 0.0
+    denom = w.sum() - (w ** 2).sum() / w.sum()
+    tau2 = max(0.0, (Q - df) / denom) if (df > 0 and denom > 0) else 0.0
+    if method == "DL":
+        wr = 1.0 / (se ** 2 + tau2)
+        beta = float((wr * b).sum() / wr.sum()); se_p = float((1.0 / wr.sum()) ** 0.5)
+    elif method == "fixed":
+        beta = b_fixed; se_p = float((1.0 / w.sum()) ** 0.5)
+    else:
+        raise ValueError("method must be 'fixed' or 'DL'")
+    z = beta / se_p
+    p = float(2 * stats.norm.sf(abs(z)))
+    ci = (beta - 1.959964 * se_p, beta + 1.959964 * se_p)
+    return dict(beta=beta, se=se_p, ci=(float(ci[0]), float(ci[1])), z=float(z), p_value=p,
+                Q=Q, I2=float(I2), tau2=float(tau2), k=k, method=method)

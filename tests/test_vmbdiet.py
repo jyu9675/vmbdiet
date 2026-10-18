@@ -3,7 +3,8 @@ import numpy as np
 import pandas as pd
 import pytest
 from vmbdiet import (assign_cst, lactobacillus_fraction, logistic_assoc, logistic_scan,
-                     nutrient_taxon_corr, mannwhitney_by_group, permanova, bray_curtis, pcoa)
+                     nutrient_taxon_corr, mannwhitney_by_group, permanova, bray_curtis, pcoa,
+                     meta_analyze, or_to_logor)
 
 TAXA = ["Lactobacillus_crispatus", "Lactobacillus_iners", "Gardnerella_vaginalis",
         "Prevotella_bivia", "Atopobium_vaginae"]
@@ -95,3 +96,25 @@ def test_mannwhitney_group():
     cst = assign_cst(abund)
     r = mannwhitney_by_group(meta["carbohydrate"], cst["lacto_dominant"].map({True: "dom", False: "dep"}))
     assert set([r["group_a"], r["group_b"]]) == {"dom", "dep"}
+
+
+def test_meta_analyze_and_or_to_logor():
+    import math
+    # OR + CI -> (log-OR, SE)
+    b, se = or_to_logor(1.5, 1.0, 2.25)
+    assert abs(b - math.log(1.5)) < 1e-9 and abs(se - 0.2069) < 1e-3
+
+    # two consistent effects: pooled sits between, I2 == 0, and pooling tightens the CI -> significant
+    m = meta_analyze([(0.5, 0.2), (0.5, 0.3)], method="fixed")
+    assert abs(m["beta"] - 0.5) < 1e-6 and m["I2"] == 0.0 and m["p_value"] < 0.01
+
+    # opposing effects -> high heterogeneity
+    het = meta_analyze([(1.0, 0.2), (0.0, 0.2)])
+    assert het["I2"] > 50
+
+    # reproduce the committed finding: animal protein -> CST-IV pooled across the two public cohorts
+    italy = or_to_logor(1.6566, 1.0850, 2.5293)   # n=113
+    melody = or_to_logor(1.2950, 0.6683, 2.5092)  # n=47
+    pooled = meta_analyze([italy, melody], method="fixed")
+    assert 1.50 < math.exp(pooled["beta"]) < 1.58     # OR ~1.54
+    assert pooled["p_value"] < 0.05 and pooled["I2"] == 0.0
