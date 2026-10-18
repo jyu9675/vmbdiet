@@ -18,7 +18,10 @@ write.table(as.data.frame(assay(se)),   "cmd_<Study>_pathway_abundance.tsv", sep
 write.table(as.data.frame(colData(se)), "cmd_<Study>_metadata.tsv",          sep="\t", quote=FALSE, col.names=NA)
 ```
 
-Pick a study (or pool several) that spans Westernized and Non-westernized samples. Then:
+Pick a study that spans both. Verified single-study contrasts (stool shotgun) in cMD:
+**`Obregon-TitoAJ_2015`** (recommended — 22 Westernized US vs 36 Non-westernized Peru, n=58) or
+**`RampelliS_2015`** (11 Italian vs 27 Hadza/Tanzania, n=38). The `westernized` column reads `Yes`/`No`.
+Then:
 
 ```bash
 python example/cmd_westernized/analyze.py \
