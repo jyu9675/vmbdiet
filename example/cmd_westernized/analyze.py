@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 import pandas as pd
-from vmbdiet import build_axis_feature_table, read_humann_table, mannwhitney_by_group
+from vmbdiet import build_axis_feature_table, read_humann_table, mannwhitney_by_group, match_features
 
 HERE = Path(__file__).parent
 
@@ -41,12 +41,18 @@ def run(pathways, meta, group_col="westernized"):
     print("=" * 70)
     if len(levels) != 2:
         print(f"  need exactly 2 {group_col} groups, got {levels}"); return 1
-    print(f"  median capacity by group (Mann-Whitney):")
-    print(f"  {'axis':<17}{levels[0][:15]:>16}{levels[1][:15]:>16}{'p(MWU)':>9}")
+    import collections
+    matched = match_features(table)
+    mc = collections.Counter(matched["category"]) if not matched.empty else {}
+    print(f"  pathways matched per axis: " + ", ".join(f"{c}={mc.get(c, 0)}" for c in axis.columns))
+    print(f"  mean capacity by group (Mann-Whitney on sample values; values are relative abundance):")
+    print(f"  {'axis':<16}{levels[0][:14]:>14}{levels[1][:14]:>14}{'p(MWU)':>9}   direction")
     for cat in axis.columns:
         r = mannwhitney_by_group(axis[cat], groups)
+        ga, gb = axis[cat][groups == levels[0]], axis[cat][groups == levels[1]]
+        hi = levels[0] if ga.mean() > gb.mean() else levels[1]
         star = " *" if r["p_value"] < 0.05 else ""
-        print(f"  {cat:<17}{r['median_a']:>16.1f}{r['median_b']:>16.1f}{r['p_value']:>9.3f}{star}")
+        print(f"  {cat:<16}{ga.mean():>14.4g}{gb.mean():>14.4g}{r['p_value']:>9.3f}{star}   higher in {hi}")
     print(f"\n  groups: {levels[0]} vs {levels[1]}.  (estrobolome / beta-glucuronidase needs the "
           f"gene-family export - EC/KO - not the pathway table.)")
     return 0
