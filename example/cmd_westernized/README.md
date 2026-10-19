@@ -48,3 +48,29 @@ is correct; swap in a real cMD export to get the real result.
   than the nutrient-intake exposures in the dedicated diet cohorts
   ([cross_cohort_meta](../cross_cohort_meta)). This is the functional/mechanism layer, complementary to the
   diet↔community association.
+
+## Real-data run (Obregon-TitoAJ_2015) — result and conclusion
+
+Run live on **`Obregon-TitoAJ_2015`** (stool shotgun, n=58: 22 US / westernized, 36 Peru /
+non-westernized), via the cMD R export. Pathways matched: glycogen_starch = 3, scfa = 2.
+
+| axis | mean (westernized, US) | mean (non-westernized, Peru) | p (MWU) | direction |
+|---|---|---|---|---|
+| glycogen_starch | 7.8e-4 | 5.8e-4 | <0.001 | higher in westernized |
+| scfa | 1.4e-4 | 4.3e-5 | <0.001 | higher in westernized |
+
+**Interpretation — treat as a validated harness, not a finding.** The contrast is statistically
+significant, but it is a weak, narrow readout: tiny *relative* abundances summed over only 3 glycogen + 2
+SCFA MetaCyc pathways (relative ≠ absolute capacity; compositional), on a coarse westernization proxy. The
+direction is the *opposite* of the naive "non-westernized high-fiber → more SCFA" expectation — the
+glycogen/starch direction is plausibly a high-starch Western diet, but the SCFA direction should not be
+read as a real biological result from two butyrate pathways. This is deliberately **not** promoted to a
+finding (unlike the clean, replicated diet→CST-IV result in [cross_cohort_meta](../cross_cohort_meta)); if
+anything it is a cautionary illustration that pathway-relative-abundance proxies can contradict the fiber
+narrative, which is exactly why the proposal needs real functional profiling + measured diet (the FRESH
+cohort), not proxies.
+
+**What this run *does* establish:** the end-to-end pipeline works on real cMD data (R export →
+`build_axis_feature_table` → group contrast). A more defensible functional read, if ever pursued, is the
+`gene_families` export (EC/KO) — a fuller SCFA capacity plus the estrobolome (β-glucuronidase) — but that
+is out of scope here; we conclude the public-data functional exploration at the harness-validation stage.
