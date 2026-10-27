@@ -43,9 +43,43 @@ gut-health too:
   only by **case-by-case request** (contacts Forslund/Birkner; 2025 French SNDS linkage governs
   outcomes). So MetaCardis is confirmed the gut analog of PREDICT — features public, **detailed diet +
   full clinical controlled/request-only** — not an open path to the mediation.
-- Genuinely-open, no application: **American Gut / AGP** (public VioScreen **FFQ** + 16S, large n —
-  but mostly 16S, so function is inferred not measured) and small shotgun+diet cohorts (Johnson
-  daily-sampling, German FFQ, Rocafort 24h-recall — already in MiDAS).
+- Genuinely-open, no application: **American Gut / AGP** (the one fully-open diet+microbiome+health
+  substrate — scoped in §2a below) and small shotgun+diet cohorts (Johnson daily-sampling, German
+  FFQ, Rocafort 24h-recall — already in MiDAS).
+
+## 2a. American Gut — the one fully-open diet + microbiome + health substrate (scoped 2026-10-27)
+
+This is the only fully-public source where *detailed diet*, *microbiome*, and a *health outcome*
+co-exist with no application — so the diet→gut→health chain can be prototyped openly here, with
+honest caveats.
+
+**What's public and where:**
+- **Microbiome:** 16S V4, in Qiita study **10317** and EBI **ERP012803**; AGP survey metadata
+  (self-reported) ships with it.
+- **Detailed diet:** the **VioScreen FFQ is public** on the lab FTP
+  (`ftp://ftp.microbio.me/AmericanGut/` incl. `raw-vioscreen/`) — a Sept-2021 snapshot carries
+  ~**7,120 VioScreen sessions** (the 2018 platform paper reported 1,762 participants). Crucially
+  **VioScreen itself computes HEI-2010 / HEI-2015** — i.e. the *same diet-quality metric vmbdiet
+  already uses* (Hawaii / MELODY), plus full nutrient panels.
+- **Outcome:** self-reported AGP survey fields (BMI, diabetes, IBD, etc.), public in the Qiita
+  metadata.
+- Join FFQ ∩ 16S ∩ survey on the AGP host/sample id. (redbiom is the "right" programmatic path but
+  was unreachable from this environment — see MiDAS Qiita gotcha — so use the FTP + Qiita/EBI
+  downloads directly.)
+
+**Why it's weaker than a shotgun cohort (state honestly):**
+1. **16S V4, not shotgun** → the *function* mediator must be **inferred (PICRUSt2)**, not measured
+   (HUMAnN). The mechanistic middle node of the mediation is therefore soft; a cleaner first pass is
+   diet→taxa/diversity→health, keeping inferred function as a clearly-labelled extension.
+2. The FFQ is a **subset** (~1.7–7k of the cohort) → FFQ ∩ 16S ∩ outcome shrinks n.
+3. Outcomes are **self-reported** → noisy.
+4. Citizen-science / WEIRD / **cross-sectional** → confounding and no temporal ordering, so mediation
+   remains associational (state the counterfactual assumptions explicitly).
+
+**Verdict:** a legitimate **fully-public first mediation prototype** — HEI diet-quality → (inferred)
+SCFA/fiber-fermentation capacity → self-reported cardiometabolic outcome — that directly exercises
+`vmbdiet.mediation` + `meta_analyze` without any application. It is hypothesis-generating; the
+measured-function + clinical-outcome version still needs MetaCardis/PREDICT (controlled) or FRESH.
 
 ## 3. What curatedMetagenomicData can and cannot do (scoped against the real columns)
 
@@ -88,9 +122,12 @@ would be wrong — BMI is downstream of diet, an outcome/confounder, not the exp
   significant. The contribution is the **reproducibility + trust rigor**, not a new association. It
   needs one R export per cohort (same cMD install gotchas); an offline synthetic demo + a locking
   test validate the pipeline end-to-end. This is the honest doable thing in cMD.
-- **B — the true diet→function→health mediation: needs a cohort with all three.** Best lead
-  **MetaCardis** (verify the Zenodo/source access to FFQ + markers); fully-open fallback **American
-  Gut** (FFQ + 16S, function inferred); **PREDICT 1 / HPP** as parallel data-access applications.
+- **B — the true diet→function→health mediation: needs a cohort with all three.** The **fully-open
+  prototype path is American Gut** (public VioScreen FFQ with computed HEI + 16S + self-reported
+  outcomes — §2a; caveat: inferred function, self-reported outcomes, cross-sectional). The
+  measured-function + clinical-outcome version needs a controlled application: **MetaCardis**
+  (confirmed controlled above) or **PREDICT 1 / HPP** — queue these in parallel. FRESH remains the
+  route for the mechanism/strain aims public data can't reach.
 - **C — the westernization → function contrast** (`example/cmd_westernized/`) is the only diet-proxy
   analysis cMD supports, and only in healthy cohorts — already run and concluded as a *validated
   harness, not a finding*.
