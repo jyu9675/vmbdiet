@@ -157,7 +157,9 @@ def main(argv=None):
     p.add_argument("--cohort", nargs=3, action="append", metavar=("LABEL", "PATHWAYS", "META"),
                    help="repeatable: a cohort's label, HUMAnN pathway table, and cMD metadata table")
     p.add_argument("--outcome", default="disease", help="metadata column holding the outcome")
-    p.add_argument("--case", default="Type 2 Diabetes Mellitus", help="value counted as a case (=1)")
+    p.add_argument("--case", default=None,
+                   help="value counted as a case (=1); OMIT if the outcome column is already numeric 0/1 "
+                        "(e.g. the t2d_case column written by export_cmd_cohorts.R)")
     p.add_argument("--control", default="Healthy", help="value counted as a control (=0)")
     p.add_argument("--covars", default="age,sex,BMI", help="comma-separated covariate columns")
     a = p.parse_args(argv)

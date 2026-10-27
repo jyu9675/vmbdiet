@@ -20,30 +20,35 @@ is uniformly `westernized=Yes`.** The exposure and the outcome never co-occur in
 of diet, an outcome/confounder.) The full diet→function→health mediation needs a cohort carrying
 diet + function + outcome together — MetaCardis / American Gut / PREDICT — see the landscape doc.
 
-## One R step per cohort, then no more R
+## One R step (all cohorts), then no more R
 
-cMD's function tables ship via R; export each cohort once (`vmbdiet.functional.write_cmd_export_R()`
-emits this):
+cMD's function tables ship via R. [`export_cmd_cohorts.R`](export_cmd_cohorts.R) pulls all three T2D
+cohorts in one pass — **`KarlssonFH_2013`** (n=145), **`QinJ_2012`** (n=363),
+**`SankaranarayananK_2015`** (n=37) — writes each cohort's pathway table + metadata, and adds a
+**coding-independent `t2d_case` 0/1 column** (cMD's disease coding varies by version, so the script
+normalizes `study_condition`/`disease` itself) plus a `sex` alias. Its header lists the install
+gotchas (Rtools45 for `bluster`; `rbiom` 1.0.3 downgrade; the ExperimentHub cache prompt). Run it on
+any machine with R + `curatedMetagenomicData`:
 
-```r
-library(curatedMetagenomicData); library(SummarizedExperiment)
-se <- curatedMetagenomicData("2021-10-14.<Study>.pathway_abundance", dryrun=FALSE, counts=FALSE, rownames="long")[[1]]
-write.table(as.data.frame(assay(se)),   "cmd_<Study>_pathway_abundance.tsv", sep="\t", quote=FALSE, col.names=NA)
-write.table(as.data.frame(colData(se)), "cmd_<Study>_metadata.tsv",          sep="\t", quote=FALSE, col.names=NA)
+```bash
+Rscript export_cmd_cohorts.R
 ```
 
-Verified T2D cohorts in cMD (stool shotgun, `disease` carries `Type 2 Diabetes Mellitus` / `Healthy`):
-**`KarlssonFH_2013`** (n=145), **`QinJ_2012`** (n=363), **`SankaranarayananK_2015`** (n=37). For an
-atherosclerotic-CVD axis instead, `JieZ_2017` (n=385) and `MetaCardis_2020_a` (n=1831) carry
-`Atherosclerosis` / `Coronary Artery Disease`. Then:
+Then, in Python (no more R):
 
 ```bash
 python analyze.py \
   --cohort Karlsson cmd_KarlssonFH_2013_pathway_abundance.tsv cmd_KarlssonFH_2013_metadata.tsv \
   --cohort Qin      cmd_QinJ_2012_pathway_abundance.tsv        cmd_QinJ_2012_metadata.tsv \
   --cohort Sankar   cmd_SankaranarayananK_2015_pathway_abundance.tsv cmd_SankaranarayananK_2015_metadata.tsv \
-  --outcome disease --case "Type 2 Diabetes Mellitus" --control Healthy --covars age,sex,BMI
+  --outcome t2d_case --covars age,sex,BMI
 ```
+
+For an atherosclerotic-CVD axis instead, `JieZ_2017` (n=385) and `MetaCardis_2020_a` (n=1831) carry
+`Atherosclerosis` / `Coronary Artery Disease` — point the script at those studies and map the case
+label accordingly. (`analyze.py` also accepts a string outcome directly, e.g.
+`--outcome disease --case "Type 2 Diabetes Mellitus" --control Healthy`, if you'd rather not use the
+normalized column.)
 
 ## Validate the harness offline (no R, no download)
 
