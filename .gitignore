@@ -15,3 +15,6 @@ data/*.fastq*
 cmd_*_pathway_abundance.tsv
 cmd_*_gene_families.tsv
 cmd_*_metadata.tsv
+# real American Gut pull (reproducible via fetch_americangut.py; not redistributed)
+agp_mediation_input.tsv
+example/american_gut_mediation/data/

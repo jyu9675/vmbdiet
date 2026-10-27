@@ -6,13 +6,17 @@ import os
 import sys
 import pytest
 
-EX = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "example", "gut_function_cardiometabolic"))
-sys.path.insert(0, EX)
-
 pytest.importorskip("statsmodels")
+
+EX = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "example", "gut_function_cardiometabolic"))
 
 
 def _by_axis():
+    # Several examples ship modules named analyze.py / make_demo.py; force this one's to load even
+    # if another example's are cached from an earlier test in the same pytest session.
+    sys.path.insert(0, EX)
+    for m in ("analyze", "make_demo"):
+        sys.modules.pop(m, None)
     import analyze
     res = analyze.run_demo(verbose=False)
     return {r["axis"]: r for r in res}
@@ -26,7 +30,6 @@ def test_scfa_signal_replicates():
     assert scfa["pooled_or"] < 1.0              # lower SCFA capacity in T2D (planted direction)
     assert scfa["p_value"] < 0.05               # significant pooled estimate
     assert scfa["replicates"] is True           # same direction in every cohort AND pooled-significant
-    # every cohort's per-SD OR is on the same (protective) side
     assert all(o < 1.0 for _, o, _, _ in scfa["per_cohort"])
 
 
