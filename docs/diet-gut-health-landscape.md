@@ -36,11 +36,13 @@ gut-health too:
   **public** via cMD, a validated **FFQ** diet instrument + a large metabolic-marker panel + a full
   cardiometabolic-disease spectrum (CAD, T2D, heart failure, metabolic syndrome). But the detailed
   diet + markers are **not** in cMD's harmonized curation (which exposes only `disease`, `bmi`,
-  `westernized`); they live in the source study, partly in a Zenodo pipeline archive
-  ([zenodo 5463864](https://zenodo.org/record/5463864), contacts Forslund/Birkner — *check whether
-  the archive's metadata includes FFQ-derived diet + markers or only features*), and 2025 linkage
-  of French participants to the national health system (SNDS) means clinical outcomes are governed
-  by French health-data rules. → the most promising lead, **access to be verified**.
+  `westernized`). **Zenodo check done (2026-10-27, [record 5463864](https://zenodo.org/record/5463864),
+  CC BY 4.0):** the archive publicly ships gut-microbiome + serum/urine **metabolome feature tables**
+  + analysis scripts — a genuine bonus asset — but the **FFQ / dietary intake is absent**, and the
+  Danish cohort subset's metadata was *removed* for data-protection, with "complete metadata" offered
+  only by **case-by-case request** (contacts Forslund/Birkner; 2025 French SNDS linkage governs
+  outcomes). So MetaCardis is confirmed the gut analog of PREDICT — features public, **detailed diet +
+  full clinical controlled/request-only** — not an open path to the mediation.
 - Genuinely-open, no application: **American Gut / AGP** (public VioScreen **FFQ** + 16S, large n —
   but mostly 16S, so function is inferred not measured) and small shotgun+diet cohorts (Johnson
   daily-sampling, German FFQ, Rocafort 24h-recall — already in MiDAS).
@@ -76,12 +78,16 @@ would be wrong — BMI is downstream of diet, an outcome/confounder, not the exp
 ## 4. What's actually feasible, ranked
 
 - **A — fully public, now (association, not mediation): cross-cohort FUNCTION ↔ cardiometabolic
-  reproducibility.** Pool the T2D cohorts (Karlsson + Qin + Sankaranarayanan) and/or ACVD (Jie) +
-  MetaCardis + the BMI cohorts, export HUMAnN function, and test whether specific functional
-  capacities (SCFA, etc.) reproducibly associate with the outcome across *independent* cohorts,
-  with the MiDAS comparability/provenance layer controlling batch and `meta_analyze` pooling. The
-  contribution is the **reproducibility + trust rigor**, not a new association. This is the honest
-  doable thing in cMD.
+  reproducibility. BUILT → [`example/gut_function_cardiometabolic/`](../example/gut_function_cardiometabolic/).**
+  Pool the T2D cohorts (Karlsson + Qin + Sankaranarayanan) and/or ACVD (Jie) + MetaCardis + the BMI
+  cohorts, export HUMAnN function, and test whether specific functional capacities (SCFA, etc.)
+  reproducibly associate with the outcome across *independent* cohorts, with the MiDAS
+  comparability/provenance layer controlling batch and `meta_analyze` pooling. The harness runs an
+  adjusted per-SD logistic association within each cohort, pools the per-cohort log-odds, and flags
+  an axis as replicating only if the direction is consistent *and* the pooled estimate is
+  significant. The contribution is the **reproducibility + trust rigor**, not a new association. It
+  needs one R export per cohort (same cMD install gotchas); an offline synthetic demo + a locking
+  test validate the pipeline end-to-end. This is the honest doable thing in cMD.
 - **B — the true diet→function→health mediation: needs a cohort with all three.** Best lead
   **MetaCardis** (verify the Zenodo/source access to FFQ + markers); fully-open fallback **American
   Gut** (FFQ + 16S, function inferred); **PREDICT 1 / HPP** as parallel data-access applications.
