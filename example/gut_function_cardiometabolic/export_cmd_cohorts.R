@@ -18,11 +18,16 @@ suppressMessages(library(curatedMetagenomicData))
 suppressMessages(library(SummarizedExperiment))
 
 studies <- c("KarlssonFH_2013", "QinJ_2012", "SankaranarayananK_2015")  # stool shotgun, T2D vs healthy
-date    <- "2021-10-14"
 
 for (study in studies) {
   cat("\n==== ", study, " ====\n", sep = "")
-  res <- paste0(date, ".", study, ".pathway_abundance")
+  # Resolve the study's pathway_abundance resource across cMD snapshots -- studies differ by date
+  # (Karlsson/Qin are 2021-10-14 but Sankaranarayanan is only 2021-03-31), so take the LATEST match
+  # rather than hardcode a date.
+  avail <- curatedMetagenomicData(paste0("\\.", study, "\\.pathway_abundance$"), dryrun = TRUE)
+  if (length(avail) < 1) { cat("  SKIP: no pathway_abundance resource for ", study, "\n", sep = ""); next }
+  res <- tail(sort(avail), 1)
+  cat("  resource: ", res, "\n", sep = "")
   se  <- curatedMetagenomicData(res, dryrun = FALSE, counts = FALSE, rownames = "long")[[1]]
 
   feat <- as.data.frame(assay(se))        # features x samples (HUMAnN layout) — relative abundance

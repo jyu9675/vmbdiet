@@ -62,6 +62,32 @@ replicates = **YES** (all three cohorts OR < 1); glycogen OR ≈ 0.85, p ≈ 0.2
 by `tests/test_gut_cardiometabolic.py`. (The numbers above are synthetic — a pipeline check, not a
 finding.)
 
+## Real-data run (3 cMD T2D cohorts) — result and conclusion
+
+Run live via `export_cmd_cohorts.R` + `analyze.py` on three independent public stool-shotgun T2D
+cohorts — **KarlssonFH_2013** (Sweden, all-female, 53 T2D / 43 healthy; `sex` auto-dropped as
+constant), **QinJ_2012** (China, 170 / 193), **SankaranarayananK_2015** (37; 19 / 18) — adjusted for
+age, sex, BMI. (IGT/pre-diabetic samples in Karlsson are correctly excluded from the strict
+T2D-vs-healthy contrast. cMD snapshots differ by study, so the script auto-resolves each: Karlsson/Qin
+`2021-10-14`, Sankaranarayanan `2021-03-31`.)
+
+| axis | Karlsson | Qin | Sankar | pooled OR/SD [95% CI] | p | I² | replicates |
+|---|---|---|---|---|---|---|---|
+| glycogen_starch | 1.25 | 0.98 | 1.32 | 1.05 [0.86–1.28] | 0.617 | 0% | **no** |
+| scfa | 1.05 | 0.82 | 1.80 | 1.00 [0.70–1.43] | 0.999 | 49% | **no** |
+
+**Conclusion — a reproducible null, which is the point.** Neither the SCFA nor the glycogen/starch
+capacity proxy shows a consistent, significant association with T2D across the three cohorts. SCFA is
+the instructive case: a single cohort would have mis-led either way (Sankaranarayanan alone OR 1.80,
+Qin alone 0.82), but requiring cross-cohort consistency collapses it to pooled OR 1.00 (I²=49%) and
+flags it **not reproducible**. This does **not** refute the butyrate-depletion-in-T2D literature —
+that signal lives at finer resolution (specific butyrate producers, absolute quantification, or gene
+level), whereas this is a deliberately coarse summed-pathway relative-abundance proxy over 2 SCFA + 3
+glycogen MetaCyc pathways. The value here is methodological: the harness reports an honest negative
+instead of over-reading one cohort. A fairer functional read is the `gene_families` (EC/KO) export —
+a broader SCFA panel + the estrobolome (β-glucuronidase) — and/or per-feature MaAsLin models rather
+than a summed axis (noted as the next step, out of scope for this harness).
+
 ## Scope and honest limits
 
 - **Association, not mediation** (see above). Replication across independent cohorts controls for
