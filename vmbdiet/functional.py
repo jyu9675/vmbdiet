@@ -62,7 +62,18 @@ FUNCTIONAL_FEATURES: dict[str, dict] = {
     },
     "scfa": {
         "label": "short-chain fatty-acid biosynthesis (butyrate / acetate / propionate)",
-        "pathways": ["PWY-5676", "CENTFERM-PWY"],              # acetyl-CoA->butanoate II; pyruvate->butanoate
+        "pathways": [
+            # butyrate
+            "PWY-5676", "CENTFERM-PWY",           # acetyl-CoA->butanoate II; pyruvate->butanoate
+            "PWY-5677", "P163-PWY", "PWY-6590",   # succinate->butanoate; Lys ferment->acetate+butanoate;
+                                                  #   C. acetobutylicum acidogenic (butyrate/acetate)
+            # propionate
+            "P108-PWY", "PROPFERM-PWY", "PWY-5088",  # pyruvate->propanoate I; Ala->propanoate+acetate;
+                                                     #   L-glutamate deg VIII -> propanoate
+            # acetate / mixed-acid
+            "PWY-5100", "PWY-7254", "FERMENTATION-PWY",  # pyruvate->acetate+lactate II; TCA VII
+                                                         #   acetate-producers; mixed-acid fermentation
+        ],
         "ecs": ["2.8.3.8", "2.7.2.7", "2.7.2.1", "2.3.1.8", "5.4.99.2", "2.8.3.1"],
         # butyryl-CoA:acetate CoA-transferase, butyrate kinase, acetate kinase, phosphate
         # acetyltransferase, methylmalonyl-CoA mutase (propionate), propionate CoA-transferase
@@ -70,8 +81,11 @@ FUNCTIONAL_FEATURES: dict[str, dict] = {
         "cazy": [],
         "name_patterns": ["butyrate kinase", "butyryl-coa", "acetate kinase",
                           "phosphate acetyltransferase", "methylmalonyl-coa mutase", "propionate"],
-        "note": "Terminal SCFA enzymes + two canonical butyrate pathways. Propionate pathway IDs vary by "
-                "route (succinate/acrylate); EC 5.4.99.2 / 2.8.3.1 are the robust propionate markers.",
+        "note": "Terminal SCFA enzymes + a broadened bacterial-fermentation pathway panel: butyrate "
+                "(acetyl-CoA / pyruvate / succinate / lysine routes), propionate (pyruvate / alanine / "
+                "glutamate routes) and acetate / mixed-acid. Excludes solventogenic (butanol/acetone/"
+                "isopropanol), lactate-only, methanogenic and aromatic-degradation pathways, which are not "
+                "SCFA biosynthesis. EC 5.4.99.2 / 2.8.3.1 remain the robust propionate enzyme markers.",
     },
 }
 

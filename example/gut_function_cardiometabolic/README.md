@@ -71,22 +71,31 @@ age, sex, BMI. (IGT/pre-diabetic samples in Karlsson are correctly excluded from
 T2D-vs-healthy contrast. cMD snapshots differ by study, so the script auto-resolves each: Karlsson/Qin
 `2021-10-14`, Sankaranarayanan `2021-03-31`.)
 
+The SCFA axis uses the **broadened fermentation panel** (butyrate/propionate/acetate/mixed-acid, the
+pathways present across these cohorts), not just the two canonical butyrate pathways.
+
 | axis | Karlsson | Qin | Sankar | pooled OR/SD [95% CI] | p | I² | replicates |
 |---|---|---|---|---|---|---|---|
 | glycogen_starch | 1.25 | 0.98 | 1.32 | 1.05 [0.86–1.28] | 0.617 | 0% | **no** |
-| scfa | 1.05 | 0.82 | 1.80 | 1.00 [0.70–1.43] | 0.999 | 49% | **no** |
+| scfa (broadened) | 1.13 | 0.95 | 2.53 | 1.19 [0.79–1.79] | 0.405 | 61% | **no** |
 
 **Conclusion — a reproducible null, which is the point.** Neither the SCFA nor the glycogen/starch
 capacity proxy shows a consistent, significant association with T2D across the three cohorts. SCFA is
-the instructive case: a single cohort would have mis-led either way (Sankaranarayanan alone OR 1.80,
-Qin alone 0.82), but requiring cross-cohort consistency collapses it to pooled OR 1.00 (I²=49%) and
-flags it **not reproducible**. This does **not** refute the butyrate-depletion-in-T2D literature —
-that signal lives at finer resolution (specific butyrate producers, absolute quantification, or gene
-level), whereas this is a deliberately coarse summed-pathway relative-abundance proxy over 2 SCFA + 3
-glycogen MetaCyc pathways. The value here is methodological: the harness reports an honest negative
-instead of over-reading one cohort. A fairer functional read is the `gene_families` (EC/KO) export —
-a broader SCFA panel + the estrobolome (β-glucuronidase) — and/or per-feature MaAsLin models rather
-than a summed axis (noted as the next step, out of scope for this harness).
+the instructive case: a single cohort would have mis-led (Sankaranarayanan alone OR 2.53, Qin 0.95),
+but requiring cross-cohort consistency flags it **not reproducible** (pooled 1.19, I²=61%). Broadening
+the SCFA panel from 2 to ~11 fermentation pathways did **not** rescue a signal — if anything
+heterogeneity rose (I² 49%→61%, driven by the tiny n=37 Sankaranarayanan cohort), reinforcing the
+null. This does **not** refute the butyrate-depletion-in-T2D literature — that signal lives at finer
+resolution (specific butyrate producers, absolute quantification, or gene level), whereas this is a
+coarse summed-pathway relative-abundance proxy. The value here is methodological: the harness reports
+an honest negative instead of over-reading one cohort.
+
+**Why we stopped at the pathway level.** The finer gene-level read (EC/KO, incl. the estrobolome
+β-glucuronidase) would need cMD's `gene_families` export — but that is **~6 million UniRef90 rows per
+cohort** with **ID-only rownames** (no descriptive names), so capturing EC/KO requires regrouping
+those tables through HUMAnN mapping files: a heavy, separate build whose cardiometabolic payoff is
+marginal (the estrobolome is a gut–vagina feature). The broadened pathway panel above is the
+practical, fully-public finer read within cMD.
 
 ## Scope and honest limits
 
