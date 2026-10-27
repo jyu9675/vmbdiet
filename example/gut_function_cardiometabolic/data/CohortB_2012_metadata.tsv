@@ -1,0 +1,151 @@
+sample_id	study_name	T2D	disease	age	sex	BMI	westernized
+CohortB_2012_S000	CohortB_2012	0	Healthy	62.4	male	25.8	Yes
+CohortB_2012_S001	CohortB_2012	0	Healthy	39.4	female	27.7	Yes
+CohortB_2012_S002	CohortB_2012	0	Healthy	41.0	male	28.4	Yes
+CohortB_2012_S003	CohortB_2012	0	Healthy	64.6	male	29.3	Yes
+CohortB_2012_S004	CohortB_2012	0	Healthy	60.4	female	24.8	Yes
+CohortB_2012_S005	CohortB_2012	0	Healthy	70.1	male	23.7	Yes
+CohortB_2012_S006	CohortB_2012	0	Healthy	56.2	male	23.9	Yes
+CohortB_2012_S007	CohortB_2012	0	Healthy	55.5	female	27.0	Yes
+CohortB_2012_S008	CohortB_2012	0	Healthy	55.6	female	23.5	Yes
+CohortB_2012_S009	CohortB_2012	0	Healthy	58.7	female	20.6	Yes
+CohortB_2012_S010	CohortB_2012	0	Healthy	58.4	male	25.6	Yes
+CohortB_2012_S011	CohortB_2012	0	Healthy	68.5	female	22.9	Yes
+CohortB_2012_S012	CohortB_2012	0	Healthy	57.6	male	22.0	Yes
+CohortB_2012_S013	CohortB_2012	0	Healthy	45.0	female	24.3	Yes
+CohortB_2012_S014	CohortB_2012	0	Healthy	72.5	female	21.1	Yes
+CohortB_2012_S015	CohortB_2012	0	Healthy	62.6	female	26.0	Yes
+CohortB_2012_S016	CohortB_2012	0	Healthy	53.3	female	30.1	Yes
+CohortB_2012_S017	CohortB_2012	0	Healthy	51.1	male	27.2	Yes
+CohortB_2012_S018	CohortB_2012	0	Healthy	58.7	female	30.7	Yes
+CohortB_2012_S019	CohortB_2012	0	Healthy	48.8	male	25.0	Yes
+CohortB_2012_S020	CohortB_2012	0	Healthy	66.3	male	24.4	Yes
+CohortB_2012_S021	CohortB_2012	0	Healthy	59.8	male	19.5	Yes
+CohortB_2012_S022	CohortB_2012	0	Healthy	48.1	male	27.1	Yes
+CohortB_2012_S023	CohortB_2012	0	Healthy	53.5	male	29.7	Yes
+CohortB_2012_S024	CohortB_2012	0	Healthy	58.9	female	25.7	Yes
+CohortB_2012_S025	CohortB_2012	0	Healthy	64.0	female	25.6	Yes
+CohortB_2012_S026	CohortB_2012	0	Healthy	50.1	female	29.9	Yes
+CohortB_2012_S027	CohortB_2012	0	Healthy	76.1	male	25.4	Yes
+CohortB_2012_S028	CohortB_2012	0	Healthy	53.4	male	10.6	Yes
+CohortB_2012_S029	CohortB_2012	0	Healthy	47.5	male	27.9	Yes
+CohortB_2012_S030	CohortB_2012	0	Healthy	50.9	female	28.4	Yes
+CohortB_2012_S031	CohortB_2012	0	Healthy	53.3	female	24.6	Yes
+CohortB_2012_S032	CohortB_2012	0	Healthy	54.5	female	27.9	Yes
+CohortB_2012_S033	CohortB_2012	0	Healthy	44.1	female	25.1	Yes
+CohortB_2012_S034	CohortB_2012	0	Healthy	53.9	female	21.9	Yes
+CohortB_2012_S035	CohortB_2012	0	Healthy	71.1	male	28.4	Yes
+CohortB_2012_S036	CohortB_2012	0	Healthy	71.0	male	29.2	Yes
+CohortB_2012_S037	CohortB_2012	0	Healthy	60.9	female	20.0	Yes
+CohortB_2012_S038	CohortB_2012	0	Healthy	55.9	female	22.1	Yes
+CohortB_2012_S039	CohortB_2012	0	Healthy	51.9	male	20.2	Yes
+CohortB_2012_S040	CohortB_2012	0	Healthy	54.3	female	22.9	Yes
+CohortB_2012_S041	CohortB_2012	0	Healthy	45.5	male	30.2	Yes
+CohortB_2012_S042	CohortB_2012	0	Healthy	55.0	male	25.1	Yes
+CohortB_2012_S043	CohortB_2012	0	Healthy	53.7	female	28.4	Yes
+CohortB_2012_S044	CohortB_2012	0	Healthy	53.8	female	20.2	Yes
+CohortB_2012_S045	CohortB_2012	0	Healthy	44.9	female	24.4	Yes
+CohortB_2012_S046	CohortB_2012	0	Healthy	73.3	male	33.7	Yes
+CohortB_2012_S047	CohortB_2012	0	Healthy	61.6	male	27.8	Yes
+CohortB_2012_S048	CohortB_2012	0	Healthy	53.3	female	33.2	Yes
+CohortB_2012_S049	CohortB_2012	0	Healthy	67.5	male	23.5	Yes
+CohortB_2012_S050	CohortB_2012	0	Healthy	54.2	female	23.9	Yes
+CohortB_2012_S051	CohortB_2012	0	Healthy	65.4	male	22.4	Yes
+CohortB_2012_S052	CohortB_2012	0	Healthy	63.0	female	29.3	Yes
+CohortB_2012_S053	CohortB_2012	0	Healthy	59.9	male	26.6	Yes
+CohortB_2012_S054	CohortB_2012	0	Healthy	57.3	male	30.7	Yes
+CohortB_2012_S055	CohortB_2012	0	Healthy	67.2	female	27.6	Yes
+CohortB_2012_S056	CohortB_2012	0	Healthy	47.9	male	27.2	Yes
+CohortB_2012_S057	CohortB_2012	0	Healthy	58.4	female	20.6	Yes
+CohortB_2012_S058	CohortB_2012	0	Healthy	63.3	female	21.1	Yes
+CohortB_2012_S059	CohortB_2012	0	Healthy	58.5	male	32.5	Yes
+CohortB_2012_S060	CohortB_2012	0	Healthy	54.7	female	26.7	Yes
+CohortB_2012_S061	CohortB_2012	0	Healthy	62.5	male	24.4	Yes
+CohortB_2012_S062	CohortB_2012	0	Healthy	65.8	male	24.1	Yes
+CohortB_2012_S063	CohortB_2012	0	Healthy	42.8	female	28.6	Yes
+CohortB_2012_S064	CohortB_2012	0	Healthy	61.0	male	27.5	Yes
+CohortB_2012_S065	CohortB_2012	0	Healthy	58.4	female	31.3	Yes
+CohortB_2012_S066	CohortB_2012	0	Healthy	54.3	male	20.4	Yes
+CohortB_2012_S067	CohortB_2012	0	Healthy	49.0	male	25.0	Yes
+CohortB_2012_S068	CohortB_2012	0	Healthy	45.6	female	20.7	Yes
+CohortB_2012_S069	CohortB_2012	0	Healthy	54.1	female	26.5	Yes
+CohortB_2012_S070	CohortB_2012	0	Healthy	65.5	female	25.2	Yes
+CohortB_2012_S071	CohortB_2012	0	Healthy	64.9	male	31.5	Yes
+CohortB_2012_S072	CohortB_2012	0	Healthy	69.2	female	23.9	Yes
+CohortB_2012_S073	CohortB_2012	0	Healthy	62.5	female	29.8	Yes
+CohortB_2012_S074	CohortB_2012	0	Healthy	60.3	female	27.0	Yes
+CohortB_2012_S075	CohortB_2012	0	Healthy	51.9	male	26.6	Yes
+CohortB_2012_S076	CohortB_2012	0	Healthy	64.5	male	30.7	Yes
+CohortB_2012_S077	CohortB_2012	0	Healthy	35.3	male	24.7	Yes
+CohortB_2012_S078	CohortB_2012	0	Healthy	71.6	male	31.8	Yes
+CohortB_2012_S079	CohortB_2012	0	Healthy	59.2	female	21.3	Yes
+CohortB_2012_S080	CohortB_2012	1	Type 2 Diabetes Mellitus	55.9	female	21.7	Yes
+CohortB_2012_S081	CohortB_2012	1	Type 2 Diabetes Mellitus	52.4	female	22.1	Yes
+CohortB_2012_S082	CohortB_2012	1	Type 2 Diabetes Mellitus	55.7	male	31.3	Yes
+CohortB_2012_S083	CohortB_2012	1	Type 2 Diabetes Mellitus	53.4	female	35.9	Yes
+CohortB_2012_S084	CohortB_2012	1	Type 2 Diabetes Mellitus	65.2	male	25.0	Yes
+CohortB_2012_S085	CohortB_2012	1	Type 2 Diabetes Mellitus	48.0	female	29.5	Yes
+CohortB_2012_S086	CohortB_2012	1	Type 2 Diabetes Mellitus	75.9	male	24.9	Yes
+CohortB_2012_S087	CohortB_2012	1	Type 2 Diabetes Mellitus	59.6	female	26.9	Yes
+CohortB_2012_S088	CohortB_2012	1	Type 2 Diabetes Mellitus	52.8	male	28.8	Yes
+CohortB_2012_S089	CohortB_2012	1	Type 2 Diabetes Mellitus	71.9	male	33.9	Yes
+CohortB_2012_S090	CohortB_2012	1	Type 2 Diabetes Mellitus	67.9	male	30.9	Yes
+CohortB_2012_S091	CohortB_2012	1	Type 2 Diabetes Mellitus	68.1	male	28.8	Yes
+CohortB_2012_S092	CohortB_2012	1	Type 2 Diabetes Mellitus	62.3	female	33.6	Yes
+CohortB_2012_S093	CohortB_2012	1	Type 2 Diabetes Mellitus	52.7	male	31.8	Yes
+CohortB_2012_S094	CohortB_2012	1	Type 2 Diabetes Mellitus	66.9	male	31.9	Yes
+CohortB_2012_S095	CohortB_2012	1	Type 2 Diabetes Mellitus	56.4	female	26.8	Yes
+CohortB_2012_S096	CohortB_2012	1	Type 2 Diabetes Mellitus	56.8	female	24.5	Yes
+CohortB_2012_S097	CohortB_2012	1	Type 2 Diabetes Mellitus	56.5	female	26.5	Yes
+CohortB_2012_S098	CohortB_2012	1	Type 2 Diabetes Mellitus	52.5	male	26.0	Yes
+CohortB_2012_S099	CohortB_2012	1	Type 2 Diabetes Mellitus	62.1	male	34.9	Yes
+CohortB_2012_S100	CohortB_2012	1	Type 2 Diabetes Mellitus	73.6	female	33.2	Yes
+CohortB_2012_S101	CohortB_2012	1	Type 2 Diabetes Mellitus	62.1	male	38.6	Yes
+CohortB_2012_S102	CohortB_2012	1	Type 2 Diabetes Mellitus	73.3	female	28.4	Yes
+CohortB_2012_S103	CohortB_2012	1	Type 2 Diabetes Mellitus	58.1	female	31.3	Yes
+CohortB_2012_S104	CohortB_2012	1	Type 2 Diabetes Mellitus	59.9	female	31.9	Yes
+CohortB_2012_S105	CohortB_2012	1	Type 2 Diabetes Mellitus	50.1	male	21.0	Yes
+CohortB_2012_S106	CohortB_2012	1	Type 2 Diabetes Mellitus	52.0	female	28.7	Yes
+CohortB_2012_S107	CohortB_2012	1	Type 2 Diabetes Mellitus	53.1	male	28.3	Yes
+CohortB_2012_S108	CohortB_2012	1	Type 2 Diabetes Mellitus	43.9	male	30.6	Yes
+CohortB_2012_S109	CohortB_2012	1	Type 2 Diabetes Mellitus	53.2	female	30.3	Yes
+CohortB_2012_S110	CohortB_2012	1	Type 2 Diabetes Mellitus	70.0	male	28.7	Yes
+CohortB_2012_S111	CohortB_2012	1	Type 2 Diabetes Mellitus	65.0	female	32.6	Yes
+CohortB_2012_S112	CohortB_2012	1	Type 2 Diabetes Mellitus	50.4	female	26.7	Yes
+CohortB_2012_S113	CohortB_2012	1	Type 2 Diabetes Mellitus	68.0	male	35.0	Yes
+CohortB_2012_S114	CohortB_2012	1	Type 2 Diabetes Mellitus	61.2	male	33.1	Yes
+CohortB_2012_S115	CohortB_2012	1	Type 2 Diabetes Mellitus	59.5	female	26.1	Yes
+CohortB_2012_S116	CohortB_2012	1	Type 2 Diabetes Mellitus	54.9	female	34.7	Yes
+CohortB_2012_S117	CohortB_2012	1	Type 2 Diabetes Mellitus	66.9	female	23.8	Yes
+CohortB_2012_S118	CohortB_2012	1	Type 2 Diabetes Mellitus	50.2	male	29.8	Yes
+CohortB_2012_S119	CohortB_2012	1	Type 2 Diabetes Mellitus	52.5	female	31.8	Yes
+CohortB_2012_S120	CohortB_2012	1	Type 2 Diabetes Mellitus	71.1	male	29.5	Yes
+CohortB_2012_S121	CohortB_2012	1	Type 2 Diabetes Mellitus	70.9	male	27.5	Yes
+CohortB_2012_S122	CohortB_2012	1	Type 2 Diabetes Mellitus	55.4	female	36.7	Yes
+CohortB_2012_S123	CohortB_2012	1	Type 2 Diabetes Mellitus	77.2	female	28.9	Yes
+CohortB_2012_S124	CohortB_2012	1	Type 2 Diabetes Mellitus	64.9	female	32.8	Yes
+CohortB_2012_S125	CohortB_2012	1	Type 2 Diabetes Mellitus	69.8	male	31.8	Yes
+CohortB_2012_S126	CohortB_2012	1	Type 2 Diabetes Mellitus	59.4	male	25.0	Yes
+CohortB_2012_S127	CohortB_2012	1	Type 2 Diabetes Mellitus	39.1	female	28.7	Yes
+CohortB_2012_S128	CohortB_2012	1	Type 2 Diabetes Mellitus	53.5	female	28.7	Yes
+CohortB_2012_S129	CohortB_2012	1	Type 2 Diabetes Mellitus	51.9	female	27.1	Yes
+CohortB_2012_S130	CohortB_2012	1	Type 2 Diabetes Mellitus	63.5	male	25.5	Yes
+CohortB_2012_S131	CohortB_2012	1	Type 2 Diabetes Mellitus	54.1	male	31.4	Yes
+CohortB_2012_S132	CohortB_2012	1	Type 2 Diabetes Mellitus	62.1	female	28.4	Yes
+CohortB_2012_S133	CohortB_2012	1	Type 2 Diabetes Mellitus	66.1	female	29.5	Yes
+CohortB_2012_S134	CohortB_2012	1	Type 2 Diabetes Mellitus	80.5	male	26.3	Yes
+CohortB_2012_S135	CohortB_2012	1	Type 2 Diabetes Mellitus	73.4	male	28.8	Yes
+CohortB_2012_S136	CohortB_2012	1	Type 2 Diabetes Mellitus	53.9	female	19.8	Yes
+CohortB_2012_S137	CohortB_2012	1	Type 2 Diabetes Mellitus	63.7	female	29.1	Yes
+CohortB_2012_S138	CohortB_2012	1	Type 2 Diabetes Mellitus	62.3	male	34.3	Yes
+CohortB_2012_S139	CohortB_2012	1	Type 2 Diabetes Mellitus	62.6	female	29.0	Yes
+CohortB_2012_S140	CohortB_2012	1	Type 2 Diabetes Mellitus	63.0	female	28.5	Yes
+CohortB_2012_S141	CohortB_2012	1	Type 2 Diabetes Mellitus	48.1	female	24.6	Yes
+CohortB_2012_S142	CohortB_2012	1	Type 2 Diabetes Mellitus	62.5	female	32.0	Yes
+CohortB_2012_S143	CohortB_2012	1	Type 2 Diabetes Mellitus	54.8	female	28.6	Yes
+CohortB_2012_S144	CohortB_2012	1	Type 2 Diabetes Mellitus	54.6	male	32.2	Yes
+CohortB_2012_S145	CohortB_2012	1	Type 2 Diabetes Mellitus	68.6	female	31.3	Yes
+CohortB_2012_S146	CohortB_2012	1	Type 2 Diabetes Mellitus	53.7	female	24.9	Yes
+CohortB_2012_S147	CohortB_2012	1	Type 2 Diabetes Mellitus	44.6	male	29.7	Yes
+CohortB_2012_S148	CohortB_2012	1	Type 2 Diabetes Mellitus	60.7	female	32.3	Yes
+CohortB_2012_S149	CohortB_2012	1	Type 2 Diabetes Mellitus	50.1	male	25.3	Yes

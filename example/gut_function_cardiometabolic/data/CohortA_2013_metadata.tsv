@@ -1,0 +1,116 @@
+sample_id	study_name	T2D	disease	age	sex	BMI	westernized
+CohortA_2013_S000	CohortA_2013	0	Healthy	58.3	female	30.9	Yes
+CohortA_2013_S001	CohortA_2013	0	Healthy	53.9	male	24.8	Yes
+CohortA_2013_S002	CohortA_2013	0	Healthy	53.8	female	25.8	Yes
+CohortA_2013_S003	CohortA_2013	0	Healthy	64.0	male	18.6	Yes
+CohortA_2013_S004	CohortA_2013	0	Healthy	70.5	male	28.7	Yes
+CohortA_2013_S005	CohortA_2013	0	Healthy	56.9	female	24.5	Yes
+CohortA_2013_S006	CohortA_2013	0	Healthy	61.7	male	25.2	Yes
+CohortA_2013_S007	CohortA_2013	0	Healthy	56.8	female	28.7	Yes
+CohortA_2013_S008	CohortA_2013	0	Healthy	51.0	male	27.6	Yes
+CohortA_2013_S009	CohortA_2013	0	Healthy	52.6	male	18.3	Yes
+CohortA_2013_S010	CohortA_2013	0	Healthy	51.5	female	21.2	Yes
+CohortA_2013_S011	CohortA_2013	0	Healthy	46.1	male	26.1	Yes
+CohortA_2013_S012	CohortA_2013	0	Healthy	65.2	female	23.0	Yes
+CohortA_2013_S013	CohortA_2013	0	Healthy	61.1	male	28.9	Yes
+CohortA_2013_S014	CohortA_2013	0	Healthy	55.6	female	30.2	Yes
+CohortA_2013_S015	CohortA_2013	0	Healthy	56.3	female	22.7	Yes
+CohortA_2013_S016	CohortA_2013	0	Healthy	60.8	male	30.4	Yes
+CohortA_2013_S017	CohortA_2013	0	Healthy	47.7	male	23.4	Yes
+CohortA_2013_S018	CohortA_2013	0	Healthy	51.3	female	26.5	Yes
+CohortA_2013_S019	CohortA_2013	0	Healthy	62.2	male	23.0	Yes
+CohortA_2013_S020	CohortA_2013	0	Healthy	69.1	female	28.5	Yes
+CohortA_2013_S021	CohortA_2013	0	Healthy	61.2	female	29.8	Yes
+CohortA_2013_S022	CohortA_2013	0	Healthy	47.3	male	28.4	Yes
+CohortA_2013_S023	CohortA_2013	0	Healthy	43.9	male	27.4	Yes
+CohortA_2013_S024	CohortA_2013	0	Healthy	56.0	male	24.2	Yes
+CohortA_2013_S025	CohortA_2013	0	Healthy	57.9	female	27.4	Yes
+CohortA_2013_S026	CohortA_2013	0	Healthy	51.0	male	25.6	Yes
+CohortA_2013_S027	CohortA_2013	0	Healthy	61.9	female	23.9	Yes
+CohortA_2013_S028	CohortA_2013	0	Healthy	66.7	female	25.3	Yes
+CohortA_2013_S029	CohortA_2013	0	Healthy	63.1	male	31.0	Yes
+CohortA_2013_S030	CohortA_2013	0	Healthy	72.3	male	29.5	Yes
+CohortA_2013_S031	CohortA_2013	0	Healthy	61.7	female	25.6	Yes
+CohortA_2013_S032	CohortA_2013	0	Healthy	49.9	male	21.0	Yes
+CohortA_2013_S033	CohortA_2013	0	Healthy	62.5	female	31.2	Yes
+CohortA_2013_S034	CohortA_2013	0	Healthy	45.2	female	20.8	Yes
+CohortA_2013_S035	CohortA_2013	0	Healthy	60.0	male	32.1	Yes
+CohortA_2013_S036	CohortA_2013	0	Healthy	74.2	male	23.7	Yes
+CohortA_2013_S037	CohortA_2013	0	Healthy	63.6	female	32.3	Yes
+CohortA_2013_S038	CohortA_2013	0	Healthy	61.4	female	27.2	Yes
+CohortA_2013_S039	CohortA_2013	0	Healthy	57.9	female	25.2	Yes
+CohortA_2013_S040	CohortA_2013	0	Healthy	52.1	male	27.2	Yes
+CohortA_2013_S041	CohortA_2013	0	Healthy	57.3	female	25.1	Yes
+CohortA_2013_S042	CohortA_2013	0	Healthy	47.7	female	30.8	Yes
+CohortA_2013_S043	CohortA_2013	0	Healthy	56.5	male	20.2	Yes
+CohortA_2013_S044	CohortA_2013	0	Healthy	68.7	female	34.4	Yes
+CohortA_2013_S045	CohortA_2013	0	Healthy	58.5	male	24.2	Yes
+CohortA_2013_S046	CohortA_2013	0	Healthy	46.4	female	36.3	Yes
+CohortA_2013_S047	CohortA_2013	0	Healthy	51.4	male	23.4	Yes
+CohortA_2013_S048	CohortA_2013	0	Healthy	62.8	female	24.9	Yes
+CohortA_2013_S049	CohortA_2013	0	Healthy	55.2	female	26.8	Yes
+CohortA_2013_S050	CohortA_2013	0	Healthy	66.8	male	29.7	Yes
+CohortA_2013_S051	CohortA_2013	0	Healthy	54.6	male	27.3	Yes
+CohortA_2013_S052	CohortA_2013	0	Healthy	40.9	male	29.2	Yes
+CohortA_2013_S053	CohortA_2013	0	Healthy	53.3	male	28.3	Yes
+CohortA_2013_S054	CohortA_2013	0	Healthy	62.3	female	29.2	Yes
+CohortA_2013_S055	CohortA_2013	0	Healthy	66.1	male	25.6	Yes
+CohortA_2013_S056	CohortA_2013	0	Healthy	52.4	female	24.0	Yes
+CohortA_2013_S057	CohortA_2013	0	Healthy	49.0	male	23.8	Yes
+CohortA_2013_S058	CohortA_2013	0	Healthy	57.3	female	24.6	Yes
+CohortA_2013_S059	CohortA_2013	0	Healthy	42.6	male	25.7	Yes
+CohortA_2013_S060	CohortA_2013	1	Type 2 Diabetes Mellitus	61.8	male	31.3	Yes
+CohortA_2013_S061	CohortA_2013	1	Type 2 Diabetes Mellitus	54.9	male	26.1	Yes
+CohortA_2013_S062	CohortA_2013	1	Type 2 Diabetes Mellitus	76.1	female	36.3	Yes
+CohortA_2013_S063	CohortA_2013	1	Type 2 Diabetes Mellitus	77.0	female	25.7	Yes
+CohortA_2013_S064	CohortA_2013	1	Type 2 Diabetes Mellitus	63.1	female	31.2	Yes
+CohortA_2013_S065	CohortA_2013	1	Type 2 Diabetes Mellitus	64.3	male	29.8	Yes
+CohortA_2013_S066	CohortA_2013	1	Type 2 Diabetes Mellitus	61.4	male	28.3	Yes
+CohortA_2013_S067	CohortA_2013	1	Type 2 Diabetes Mellitus	54.0	female	29.5	Yes
+CohortA_2013_S068	CohortA_2013	1	Type 2 Diabetes Mellitus	56.3	female	32.3	Yes
+CohortA_2013_S069	CohortA_2013	1	Type 2 Diabetes Mellitus	62.5	female	30.3	Yes
+CohortA_2013_S070	CohortA_2013	1	Type 2 Diabetes Mellitus	60.7	male	28.3	Yes
+CohortA_2013_S071	CohortA_2013	1	Type 2 Diabetes Mellitus	56.0	male	30.6	Yes
+CohortA_2013_S072	CohortA_2013	1	Type 2 Diabetes Mellitus	60.1	male	23.7	Yes
+CohortA_2013_S073	CohortA_2013	1	Type 2 Diabetes Mellitus	67.1	female	25.9	Yes
+CohortA_2013_S074	CohortA_2013	1	Type 2 Diabetes Mellitus	54.1	female	26.7	Yes
+CohortA_2013_S075	CohortA_2013	1	Type 2 Diabetes Mellitus	62.3	female	26.7	Yes
+CohortA_2013_S076	CohortA_2013	1	Type 2 Diabetes Mellitus	51.4	female	34.2	Yes
+CohortA_2013_S077	CohortA_2013	1	Type 2 Diabetes Mellitus	60.4	female	24.3	Yes
+CohortA_2013_S078	CohortA_2013	1	Type 2 Diabetes Mellitus	60.1	female	36.2	Yes
+CohortA_2013_S079	CohortA_2013	1	Type 2 Diabetes Mellitus	47.8	male	30.9	Yes
+CohortA_2013_S080	CohortA_2013	1	Type 2 Diabetes Mellitus	64.3	male	30.2	Yes
+CohortA_2013_S081	CohortA_2013	1	Type 2 Diabetes Mellitus	68.0	female	30.9	Yes
+CohortA_2013_S082	CohortA_2013	1	Type 2 Diabetes Mellitus	62.1	male	29.3	Yes
+CohortA_2013_S083	CohortA_2013	1	Type 2 Diabetes Mellitus	61.3	male	30.3	Yes
+CohortA_2013_S084	CohortA_2013	1	Type 2 Diabetes Mellitus	59.0	female	25.2	Yes
+CohortA_2013_S085	CohortA_2013	1	Type 2 Diabetes Mellitus	66.3	male	27.0	Yes
+CohortA_2013_S086	CohortA_2013	1	Type 2 Diabetes Mellitus	51.3	male	35.8	Yes
+CohortA_2013_S087	CohortA_2013	1	Type 2 Diabetes Mellitus	67.7	female	26.9	Yes
+CohortA_2013_S088	CohortA_2013	1	Type 2 Diabetes Mellitus	65.6	female	28.5	Yes
+CohortA_2013_S089	CohortA_2013	1	Type 2 Diabetes Mellitus	60.7	female	19.7	Yes
+CohortA_2013_S090	CohortA_2013	1	Type 2 Diabetes Mellitus	61.5	female	26.2	Yes
+CohortA_2013_S091	CohortA_2013	1	Type 2 Diabetes Mellitus	48.2	male	22.9	Yes
+CohortA_2013_S092	CohortA_2013	1	Type 2 Diabetes Mellitus	52.5	female	35.7	Yes
+CohortA_2013_S093	CohortA_2013	1	Type 2 Diabetes Mellitus	59.8	male	33.4	Yes
+CohortA_2013_S094	CohortA_2013	1	Type 2 Diabetes Mellitus	57.9	male	29.6	Yes
+CohortA_2013_S095	CohortA_2013	1	Type 2 Diabetes Mellitus	63.6	male	27.3	Yes
+CohortA_2013_S096	CohortA_2013	1	Type 2 Diabetes Mellitus	62.4	female	25.5	Yes
+CohortA_2013_S097	CohortA_2013	1	Type 2 Diabetes Mellitus	48.2	male	28.1	Yes
+CohortA_2013_S098	CohortA_2013	1	Type 2 Diabetes Mellitus	58.3	male	32.9	Yes
+CohortA_2013_S099	CohortA_2013	1	Type 2 Diabetes Mellitus	73.8	male	27.3	Yes
+CohortA_2013_S100	CohortA_2013	1	Type 2 Diabetes Mellitus	65.6	female	31.9	Yes
+CohortA_2013_S101	CohortA_2013	1	Type 2 Diabetes Mellitus	68.4	male	27.4	Yes
+CohortA_2013_S102	CohortA_2013	1	Type 2 Diabetes Mellitus	65.9	female	32.2	Yes
+CohortA_2013_S103	CohortA_2013	1	Type 2 Diabetes Mellitus	55.0	male	31.4	Yes
+CohortA_2013_S104	CohortA_2013	1	Type 2 Diabetes Mellitus	70.1	male	26.7	Yes
+CohortA_2013_S105	CohortA_2013	1	Type 2 Diabetes Mellitus	72.3	male	24.0	Yes
+CohortA_2013_S106	CohortA_2013	1	Type 2 Diabetes Mellitus	64.0	female	24.2	Yes
+CohortA_2013_S107	CohortA_2013	1	Type 2 Diabetes Mellitus	69.8	female	30.4	Yes
+CohortA_2013_S108	CohortA_2013	1	Type 2 Diabetes Mellitus	50.7	male	27.3	Yes
+CohortA_2013_S109	CohortA_2013	1	Type 2 Diabetes Mellitus	44.8	male	26.2	Yes
+CohortA_2013_S110	CohortA_2013	1	Type 2 Diabetes Mellitus	62.1	male	29.7	Yes
+CohortA_2013_S111	CohortA_2013	1	Type 2 Diabetes Mellitus	60.4	female	30.9	Yes
+CohortA_2013_S112	CohortA_2013	1	Type 2 Diabetes Mellitus	58.3	female	29.6	Yes
+CohortA_2013_S113	CohortA_2013	1	Type 2 Diabetes Mellitus	62.4	female	31.2	Yes
+CohortA_2013_S114	CohortA_2013	1	Type 2 Diabetes Mellitus	51.5	female	35.1	Yes
