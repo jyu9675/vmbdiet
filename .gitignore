@@ -18,3 +18,5 @@ cmd_*_metadata.tsv
 # real American Gut pull (reproducible via fetch_americangut.py; not redistributed)
 agp_mediation_input.tsv
 example/american_gut_mediation/data/
+# real Johnson 2019 "Daily Sampling" pull (reproducible via fetch_dietstudy.py; not redistributed)
+example/diet_function_timeseries/data/
